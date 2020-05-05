@@ -7,3 +7,19 @@ before_install:
 
 script:
   - docker run -e CI=true bnassivet/docker-react npm run test -- --coverage
+
+# Deployment to AWS elasticbeanstalk
+#deploy:
+#  provider: elasticbeanstalk
+#  region: "us-west-2"
+#  app: "<name of the app in AWS>"
+#  env: "<name of the env in AWS>"
+#  bucket_name: "<name of the bucket in AWS from Servoces->S3>"
+#  bucket_path: "<name of the app in AWS>"
+#on:
+#  branch: master
+# AWS IAM infos --> Services/IAM/USER
+# AWS_ACCESS_KEY and AWS_SECRET_KEY defined first in travis environment
+#acces_key_id: $AWS_ACCESS_KEY
+#secret_access_key:
+#  secure: "$AWS_SECRET_KEY"
